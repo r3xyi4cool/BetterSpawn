@@ -1,4 +1,4 @@
-BetterCommandSpawn Pro is a fully customizable spawn plugin designed to give server admins full control over player spawn behavior. With its extensive set of features, it goes beyond simple teleportation, allowing you to tailor the spawn experience to fit your server’s needs.
+BetterCommandSpawn is a fully customizable spawn plugin designed to give server admins full control over player spawn behavior. With its extensive set of features, it goes beyond simple teleportation, allowing you to tailor the spawn experience to fit your server’s needs.
 
 Key features include:
 
@@ -20,4 +20,4 @@ Key features include:
 >Admin Controls: Administrators have full control over the plugin's configuration, from permission settings to teleportation features,
                  allowing a seamless and efficient experience for both players and admins.
 
-CommandSpawn Pro offers a powerful and flexible solution to elevate your server's spawn functionality with advanced customization     and a player-friendly interface.
+CommandSpawnoffers a powerful and flexible solution to elevate your server's spawn functionality with advanced customization     and a player-friendly interface.

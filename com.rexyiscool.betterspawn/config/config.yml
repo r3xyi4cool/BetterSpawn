@@ -1,0 +1,25 @@
+name: BetterSpawns
+version: '1.20.4'
+main: me.rexyiscool.betterSpawns.BetterSpawns
+api-version: '1.20'
+teleport-delay: 5
+setspawnperm: blitz.setspawn
+spawn-reload: blitz.spawnreload
+commands:
+  bsetspawn:
+    description: Sets the spawn point
+    usage: /bsetspawn
+  bspawn:
+    description: Teleports player to the spawn point
+    usage: /bspawn
+  spawnreload:
+    description: Reload the whole plugin
+    usage: /spawnreload
+  spawnmenu:
+    description: Opens the teleport message color selection menu
+    usage: /spawnmenu
+
+command:
+  command:
+    - heal %player%
+    - say Welcome %player% to my server

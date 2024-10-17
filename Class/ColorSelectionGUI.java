@@ -20,17 +20,31 @@ public class ColorSelectionGUI implements Listener {
 
     // Method to open the color selection GUI
     public void openColorSelectionGUI(Player player) {
-        Inventory gui = plugin.getServer().createInventory(null, 9, "Select Teleport Message Color");
+        Inventory gui = plugin.getServer().createInventory(null, 27, "Select Teleport Message Color");
 
         // Add colored wool as options for players
-        ItemStack redOption = createColorItem(Material.RED_WOOL, ChatColor.RED + "Red");
-        ItemStack blueOption = createColorItem(Material.BLUE_WOOL, ChatColor.BLUE + "Blue");
-        ItemStack greenOption = createColorItem(Material.GREEN_WOOL, ChatColor.GREEN + "Green");
+        ItemStack redOption = createColorItem(Material.RED_CANDLE, ChatColor.RED + "Red");
+        ItemStack blueOption = createColorItem(Material.BLUE_CANDLE, ChatColor.BLUE + "Blue");
+        ItemStack greenOption = createColorItem(Material.GREEN_CANDLE, ChatColor.GREEN + "Green");
+        ItemStack blackOption = createColorItem(Material.BLACK_CANDLE,ChatColor.BLACK+"Black");
+        ItemStack goldOption = createColorItem(Material.ORANGE_CANDLE,ChatColor.GOLD+"Gold");
+        ItemStack cyanOption = createColorItem(Material.CYAN_CANDLE,ChatColor.AQUA+"Cyan");
+        ItemStack purpleOption = createColorItem(Material.PURPLE_CANDLE,ChatColor.DARK_PURPLE+"Purple");
+        ItemStack yellowOption = createColorItem(Material.YELLOW_CANDLE,ChatColor.YELLOW+"Yellow");
+        ItemStack grayOption = createColorItem(Material.GRAY_CANDLE,ChatColor.DARK_GRAY+"Gray");
+
 
         // Set items in the GUI
         gui.setItem(2, redOption);
         gui.setItem(4, blueOption);
         gui.setItem(6, greenOption);
+        gui.setItem(11, blackOption);
+        gui.setItem(13, goldOption);
+        gui.setItem(15, cyanOption);
+        gui.setItem(20, purpleOption);
+        gui.setItem(22, yellowOption);
+        gui.setItem(24, grayOption);
+
 
         // Open the inventory for the player
         player.openInventory(gui);
@@ -68,7 +82,26 @@ public class ColorSelectionGUI implements Listener {
             } else if (displayName.contains("Green")) {
                 plugin.setPlayerColor(player, ChatColor.GREEN);
                 player.sendMessage(ChatColor.GREEN + "You selected Green!");
+            } else if (displayName.contains("Black")) {
+                plugin.setPlayerColor(player, ChatColor.BLACK);
+                player.sendMessage(ChatColor.BLACK + "You selected Green!");
+            } else if (displayName.contains("Gold")) {
+                plugin.setPlayerColor(player, ChatColor.GOLD);
+                player.sendMessage(ChatColor.GOLD + "You selected Green!");
+            } else if (displayName.contains("Cyan")) {
+                plugin.setPlayerColor(player, ChatColor.AQUA);
+                player.sendMessage(ChatColor.AQUA + "You selected Green!");
+            } else if (displayName.contains("Purple")) {
+                plugin.setPlayerColor(player, ChatColor.DARK_PURPLE);
+                player.sendMessage(ChatColor.DARK_PURPLE + "You selected Green!");
+            } else if (displayName.contains("Yellow")) {
+                plugin.setPlayerColor(player, ChatColor.YELLOW);
+                player.sendMessage(ChatColor.YELLOW + "You selected Green!");
+            } else if (displayName.contains("Gray")) {
+                plugin.setPlayerColor(player, ChatColor.DARK_GRAY);
+                player.sendMessage(ChatColor.DARK_GRAY + "You selected Green!");
             }
+
 
             player.closeInventory(); // Close the GUI after selection
         }

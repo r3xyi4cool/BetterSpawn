@@ -11,9 +11,6 @@ Key features include:
 > Teleportation Delay: Set a custom delay before teleportation occurs, adding an element of suspense or preventing 
                        instant spawns.
 
-> Movement Check: Toggle whether teleportation should be canceled if the player moves during the countdown,
-                  adding realism and preventing quick escapes.
-
 >Customizable Messages: Easily modify the color and style of messages sent to players when using /spawn,
                         ensuring consistent branding and clear communication.
 

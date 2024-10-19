@@ -84,22 +84,22 @@ public class ColorSelectionGUI implements Listener {
                 player.sendMessage(ChatColor.GREEN + "You selected Green!");
             } else if (displayName.contains("Black")) {
                 plugin.setPlayerColor(player, ChatColor.BLACK);
-                player.sendMessage(ChatColor.BLACK + "You selected Green!");
+                player.sendMessage(ChatColor.BLACK + "You selected Black!");
             } else if (displayName.contains("Gold")) {
                 plugin.setPlayerColor(player, ChatColor.GOLD);
-                player.sendMessage(ChatColor.GOLD + "You selected Green!");
+                player.sendMessage(ChatColor.GOLD + "You selected Orange!");
             } else if (displayName.contains("Cyan")) {
                 plugin.setPlayerColor(player, ChatColor.AQUA);
-                player.sendMessage(ChatColor.AQUA + "You selected Green!");
+                player.sendMessage(ChatColor.AQUA + "You selected Cyan!");
             } else if (displayName.contains("Purple")) {
                 plugin.setPlayerColor(player, ChatColor.DARK_PURPLE);
-                player.sendMessage(ChatColor.DARK_PURPLE + "You selected Green!");
+                player.sendMessage(ChatColor.DARK_PURPLE + "You selected Purple!");
             } else if (displayName.contains("Yellow")) {
                 plugin.setPlayerColor(player, ChatColor.YELLOW);
-                player.sendMessage(ChatColor.YELLOW + "You selected Green!");
+                player.sendMessage(ChatColor.YELLOW + "You selected Yellow!");
             } else if (displayName.contains("Gray")) {
                 plugin.setPlayerColor(player, ChatColor.DARK_GRAY);
-                player.sendMessage(ChatColor.DARK_GRAY + "You selected Green!");
+                player.sendMessage(ChatColor.DARK_GRAY + "You selected Gray!");
             }
 
 

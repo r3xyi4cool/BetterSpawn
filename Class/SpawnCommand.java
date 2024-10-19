@@ -15,23 +15,28 @@ import java.util.Map;
 
 public class SpawnCommand implements CommandExecutor {
 
+    // Reference to the main plugin class
     private final BetterSpawns plugin;
-    private final Map<Player, Integer> teleportTasks = new HashMap<>();  // Store teleport task IDs per player
-    private final Map<Player, Integer> movementCheckTasks = new HashMap<>();  // Store movement check task IDs per player
+    // Store teleport task IDs per player
+    private final Map<Player, Integer> teleportTasks = new HashMap<>();
+    // Store movement check task IDs per player
+    private final Map<Player, Integer> movementCheckTasks = new HashMap<>();
 
+    // Constructor to initialize the SpawnCommand with the plugin instance
     public SpawnCommand(BetterSpawns plugin) {
         this.plugin = plugin;
     }
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
+        // Check if the command sender is a player
         if (commandSender instanceof Player) {
             Player player = (Player) commandSender;
             Location initialLocation = player.getLocation();  // Store the player's location at the start of teleport
 
             // Notify the player of the teleport delay
             ChatColor playerColor = plugin.getPlayerColor(player);
-            player.sendTitle(playerColor + "Teleporting in " + plugin.teleportDelay,playerColor + " seconds...",20,40,20);
+            player.sendTitle(playerColor + "Teleporting in " + plugin.teleportDelay, playerColor + " seconds...", 20, 40, 20);
 
             // Task to monitor if the player moves during the teleportation delay
             BukkitTask movementCheckTask = Bukkit.getScheduler().runTaskTimer(plugin, () -> {
@@ -63,7 +68,7 @@ public class SpawnCommand implements CommandExecutor {
                         plugin.getServer().dispatchCommand(plugin.getServer().getConsoleSender(), processedCommand);
                     }
                 } else {
-                    player.sendMessage(playerColor + "No commands to execute after teleport.");
+                    player.sendMessage(playerColor + "No commands to execute after teleport."); // Inform player if no commands are set
                 }
 
                 teleportTasks.remove(player);  // Clean up task tracking after teleport
@@ -71,12 +76,12 @@ public class SpawnCommand implements CommandExecutor {
             }, plugin.teleportDelay * 20);  // Delay is multiplied by 20 to convert seconds to ticks
             teleportTasks.put(player, teleportTask.getTaskId());
 
-            return true;
+            return true; // Indicate that the command was handled successfully
         } else {
             // Notify non-player senders that the command is player-only
             commandSender.sendMessage("This command can only be executed by a player.");
         }
 
-        return false;
+        return false; // Indicate that the command was not handled successfully
     }
 }
